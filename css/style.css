@@ -599,18 +599,32 @@ nav a.active {
 @media (max-width: 767px) {
 
     /* --- Navbar layout --- */
-    .navbar {
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 16px 0;
-        gap: 0;
-    }
+     .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+     }
 
     /* Show hamburger, hide desktop button */
     .menu-toggle {
         display: block;
     }
-
+     nav.open::after {
+    content: "RESERVATION";
+    display: block;
+    margin: 10px 20px 20px;
+    background: #c47f00;
+    color: white;
+    text-align: center;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+  }
     .desktop-btn {
         display: none;
     }
