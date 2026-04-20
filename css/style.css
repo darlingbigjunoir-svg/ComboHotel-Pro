@@ -631,7 +631,7 @@ nav a.active {
 
     /* --- Mobile nav: hidden by default --- */
     nav {
-        display: none;
+        display: none!important;
         width: 100%;
         background: rgba(0, 0, 0, 0.92);
         position: absolute;
@@ -643,7 +643,8 @@ nav a.active {
 
     /* When JS adds .open class, show it */
     nav.open {
-        display: block;
+        display: block !important;
+        
     }
 
     nav ul {
