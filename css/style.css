@@ -460,9 +460,7 @@ nav a.active {
     padding: 20px 0;
   }
 
-  nav.active {
-    display: block;
-  }
+  
 }
 
 
@@ -655,8 +653,7 @@ nav a.active {
         color: white;
     }
 
-    nav a:hover,
-    nav a.active {
+    nav a:hover{
         color: gold;
         text-decoration: none;
         background: rgba(255,255,255,0.05);
