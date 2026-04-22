@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  
+  // ============================================================
+  //  HAMBURGER MENU
+  // ============================================================
   const menuToggle = document.getElementById("menu-toggle");
   const navMenu    = document.getElementById("nav-menu");
 
@@ -10,33 +12,43 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("open");
 
       const icon = menuToggle.querySelector("i");
+
+      // FIX: classList.replace() silently fails if the class is absent.
+      //      Using remove() + add() is always safe.
       if (navMenu.classList.contains("open")) {
-        icon.classList.replace("fa-bars", "fa-xmark");
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
       } else {
-        icon.classList.replace("fa-xmark", "fa-bars");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
       }
     });
 
-  
+    // Close menu when a nav link is clicked
     navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("open");
         const icon = menuToggle.querySelector("i");
-        icon.classList.replace("fa-xmark", "fa-bars");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
       });
     });
 
-    
+    // Close menu when clicking outside nav / toggle
     document.addEventListener("click", (e) => {
       if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
         navMenu.classList.remove("open");
         const icon = menuToggle.querySelector("i");
-        icon.classList.replace("fa-xmark", "fa-bars");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
       }
     });
   }
 
-  
+
+  // ============================================================
+  //  TESTIMONIAL SLIDER
+  // ============================================================
   const cards = document.querySelectorAll(".testimonial-card");
   const dots  = document.querySelectorAll(".dot");
   let current = 0;
@@ -65,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startAuto();
   }
 
-  
   dots.forEach(dot => {
     dot.addEventListener("click", () => {
       showSlide(parseInt(dot.getAttribute("data-index"), 10));
@@ -78,28 +89,37 @@ document.addEventListener("DOMContentLoaded", () => {
     startAuto();
   }
 
-  
+
+  // ============================================================
+  //  SCROLL-SPY — highlight active nav link based on section
+  // ============================================================
   const sections = document.querySelectorAll("section[id], header, footer[id]");
   const navLinks = document.querySelectorAll("nav a");
 
   function setActiveLink() {
-    let current = "";
+    let activeSectionId = "";
+
     sections.forEach(section => {
       const top = section.offsetTop - 100;
       if (window.scrollY >= top) {
-        current = section.getAttribute("id");
+        activeSectionId = section.getAttribute("id");
       }
     });
 
     navLinks.forEach(link => {
       link.classList.remove("active");
       const href = link.getAttribute("href");
-      if (href === "#" + current || (current === "" && href === "index.html")) {
+      if (
+        href === "#" + activeSectionId ||
+        (activeSectionId === "" && href === "index.html")
+      ) {
         link.classList.add("active");
       }
     });
   }
 
   window.addEventListener("scroll", setActiveLink);
+  // Run once on load to set the correct initial state
+  setActiveLink();
 
 });
