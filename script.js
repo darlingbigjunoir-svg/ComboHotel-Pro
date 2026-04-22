@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuToggle.addEventListener("click", function () {
       navMenu.classList.toggle("open");
-
       const icon = menuToggle.querySelector("i");
-
-      // FIX: classList.replace() silently fails if the class is absent.
-      //      Using remove() + add() is always safe.
       if (navMenu.classList.contains("open")) {
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
@@ -47,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ============================================================
-  //  TESTIMONIAL SLIDER
+  //  TESTIMONIAL SLIDER (index.html only)
   // ============================================================
   const cards = document.querySelectorAll(".testimonial-card");
   const dots  = document.querySelectorAll(".dot");
@@ -57,10 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function showSlide(index) {
     cards.forEach(c => c.classList.remove("active"));
     dots.forEach(d => d.classList.remove("active"));
-
     if (cards[index]) cards[index].classList.add("active");
     if (dots[index])  dots[index].classList.add("active");
-
     current = index;
   }
 
@@ -92,15 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ============================================================
   //  SCROLL-SPY — highlight active nav link based on section
+  //  (index.html only)
   // ============================================================
-  const sections = document.querySelectorAll("section[id], header, footer[id]");
+  const sections = document.querySelectorAll("section[id], footer[id]");
   const navLinks = document.querySelectorAll("nav a");
 
   function setActiveLink() {
-    let activeSectionId = "";
+    // Skip scroll-spy on rooms.html (nav active is set in markup)
+    if (document.querySelector("header.rooms-header")) return;
 
+    let activeSectionId = "";
     sections.forEach(section => {
-      const top = section.offsetTop - 100;
+      const top = section.offsetTop - 120;
       if (window.scrollY >= top) {
         activeSectionId = section.getAttribute("id");
       }
@@ -111,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const href = link.getAttribute("href");
       if (
         href === "#" + activeSectionId ||
-        (activeSectionId === "" && href === "index.html")
+        (activeSectionId === "" && (href === "index.html" || href === "./index.html"))
       ) {
         link.classList.add("active");
       }
@@ -119,7 +116,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", setActiveLink);
-  // Run once on load to set the correct initial state
   setActiveLink();
+
+
+  // ============================================================
+  //  ROOMS FILTER (rooms.html only)
+  // ============================================================
+  const filterPrice = document.getElementById("filter-price");
+  const filterType  = document.getElementById("filter-type");
+  const roomCards   = document.querySelectorAll(".rooms-card[data-price]");
+  const noResults   = document.getElementById("no-results");
+
+  function applyFilters() {
+    if (!filterPrice || !filterType || roomCards.length === 0) return;
+
+    const priceVal = filterPrice.value;
+    const typeVal  = filterType.value;
+    let visibleCount = 0;
+
+    roomCards.forEach(card => {
+      const cardPrice = parseInt(card.getAttribute("data-price"), 10);
+      const cardType  = card.getAttribute("data-type");
+
+      const priceOk = priceVal === "all" || cardPrice <= parseInt(priceVal, 10);
+      const typeOk  = typeVal  === "all" || cardType  === typeVal;
+
+      if (priceOk && typeOk) {
+        card.style.display = "";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+  }
+
+  if (filterPrice) filterPrice.addEventListener("change", applyFilters);
+  if (filterType)  filterType.addEventListener("change", applyFilters);
 
 });
