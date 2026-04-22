@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamboHotel – Rooms</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body id="top">
+
+    <!-- Back to Top -->
+    <div class="top-arrow">
+      <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+
+    <!-- ======== HEADER (rooms page — compact hero) ======== -->
+    <header class="rooms-header">
+      <div class="container">
+
+        <div class="navbar">
+          <div class="logo">
+            <h2>CamboHotel</h2>
+          </div>
+
+          <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+
+          <nav id="nav-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="rooms.html" class="active">Rooms</a></li>
+              <li><a href="#">Restaurant</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <button class="btn desktop-btn">RESERVATION</button>
+        </div>
+
+        <div class="rooms-hero-content">
+          <h1>Our Rooms</h1>
+        </div>
+
+      </div>
+    </header>
+    <!-- ======== END HEADER ======== -->
+
+
+    <!-- ======== FILTER BAR ======== -->
+    <section class="filter-bar">
+      <div class="container">
+        <div class="filter-inner">
+          <span class="filter-label"><i class="fa-solid fa-filter"></i> Filter By:</span>
+          <div class="filter-selects">
+            <select id="filter-price" aria-label="Filter by price">
+              <option value="all">All Prices</option>
+              <option value="99">Up to $99</option>
+              <option value="149">Up to $149</option>
+              <option value="199">Up to $199</option>
+            </select>
+            <select id="filter-type" aria-label="Filter by type">
+              <option value="all">All Types</option>
+              <option value="standard">Standard</option>
+              <option value="deluxe">Deluxe</option>
+              <option value="executive">Executive</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== END FILTER BAR ======== -->
+
+
+    <!-- ======== ROOMS SECTION ======== -->
+    <section class="rooms" id="rooms">
+      <div class="container">
+
+        <div class="rooms-title">
+          <h2>Explore Our Rooms</h2>
+        </div>
+
+        <div class="rooms-content" id="rooms-grid">
+
+          <div class="rooms-card" data-price="99" data-type="standard">
+            <img src="images/standard.jpg" alt="Standard Room" />
+            <div class="card-body">
+              <h3>Standard Room</h3>
+              <p><i class="fa-solid fa-dollar-sign"></i> $99/night</p>
+              <p><i class="fa-solid fa-bed"></i> Queen Bed</p>
+              <p><i class="fa-solid fa-mountain-sun"></i> City View</p>
+              <p><i class="fa-solid fa-wifi"></i> Free Wi-Fi</p>
+              <button class="btn">View Details</button>
+            </div>
+          </div>
+
+          <div class="rooms-card" data-price="149" data-type="deluxe">
+            <img src="images/deluxe.jpg" alt="Deluxe Room" />
+            <div class="card-body">
+              <h3>Deluxe Room</h3>
+              <p><i class="fa-solid fa-dollar-sign"></i> $149/night</p>
+              <p><i class="fa-solid fa-bed"></i> King Bed</p>
+              <p><i class="fa-solid fa-mountain-sun"></i> Ocean View</p>
+              <p><i class="fa-solid fa-person-shelter"></i> Balcony</p>
+              <button class="btn">View Details</button>
+            </div>
+          </div>
+
+          <div class="rooms-card" data-price="199" data-type="executive">
+            <img src="images/executive.jpg" alt="Executive Suite" />
+            <div class="card-body">
+              <h3>Executive Suite</h3>
+              <p><i class="fa-solid fa-dollar-sign"></i> $199/night</p>
+              <p><i class="fa-solid fa-bed"></i> King Bed</p>
+              <p><i class="fa-solid fa-couch"></i> Living Area</p>
+              <p><i class="fa-solid fa-hot-tub-person"></i> Jacuzzi</p>
+              <button class="btn">View Details</button>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="no-results" id="no-results" style="display:none; text-align:center; color:#888; padding:40px 0;">
+          No rooms match your filters. Please try a different selection.
+        </p>
+
+      </div>
+    </section>
+    <!-- ======== END ROOMS SECTION ======== -->
+
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+
+          <div class="footer-col">
+            <h2>CamboHotel</h2>
+            <p>Experience elegance and comfort at its finest. Book your stay with us for a perfect escape.</p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Restaurant</a></li>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="#">Booking</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="fa-solid fa-location-dot"></i> 123 Amanful Street, Takoradi, Ghana</p>
+            <p><i class="fa-solid fa-phone"></i> +233 123 456 789</p>
+            <p><i class="fa-solid fa-envelope"></i> hello@camboHotel.com</p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Stay Connected</h3>
+            <div class="connect">
+              <input type="email" placeholder="Enter your email" />
+              <button type="button">Subscribe</button>
+            </div>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p> 2025 CamboHotel. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- ======== END FOOTER ======== -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
