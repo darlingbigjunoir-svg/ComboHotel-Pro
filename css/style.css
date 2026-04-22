@@ -249,7 +249,7 @@ header {
 .check-btn:hover { background: orange; }
 
 
-/* ----------------------- ROOMS PAGE-------------------- */
+/* ----------------------- ROOMS STYLING-------------------- */
 header.rooms-header {
     background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url(../images/bg.jpg);
     height: 300px;
@@ -274,7 +274,7 @@ header.rooms-header {
 }
 
 
-/* ------------------FILTER BAR ----------------- */
+/* ------------------FILTER BAR STYLING----------------- */
 .filter-bar {
     background: #fff;
     border-bottom: 1px solid #eee;
@@ -322,9 +322,7 @@ header.rooms-header {
 }
 
 
-/* ============================================================
-   WHY STAY + ROOMS SECTION
-   ============================================================ */
+/* --------------------WHY STAY + ROOMS SECTION--------------------- */
 .rooms {
     padding: 50px 0 60px;
 }
@@ -451,9 +449,7 @@ header.rooms-header {
 }
 
 
-/* ============================================================
-   GALLERY SECTION
-   ============================================================ */
+/* -----------------GALLERY STYLING------------------- */
 .gallery {
     padding: 40px 0 60px;
     background: #f9f9f9;
@@ -493,7 +489,7 @@ header.rooms-header {
 .gallery-item:hover img { transform: scale(1.07); }
 
 
-/* ------------------TESTIMONIALS SECTION -------------------------- */
+/* ------------------TESTIMONIALS STYLING -------------------------- */
 .testimonials {
     padding: 60px 0;
     background: white;
@@ -575,7 +571,7 @@ header.rooms-header {
 .dot.active { background: #c47f00; }
 
 
-/* --------------------CTA + VIDEO SECTION------------------- */
+/* --------------------CTA + VIDEO STYLING------------------- */
 .cta-video {
     background: #f5f5f5;
     padding: 60px 0;
@@ -750,6 +746,7 @@ header.rooms-header {
     font-size: 13px;
     color: #666;
 }
+
 
 
 /* ============================================================
