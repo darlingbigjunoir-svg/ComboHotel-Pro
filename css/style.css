@@ -21,9 +21,7 @@ body {
 }
 
 
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
+
 .top-arrow {
     position: fixed;
     bottom: 30px;
@@ -46,10 +44,6 @@ body {
 .top-arrow:hover { background: orange; }
 .top-arrow a { color: white; line-height: 1; }
 
-
-/* ============================================================
-   SHARED NAVBAR
-   ============================================================ */
 .navbar {
     display: flex;
     align-items: center;
@@ -111,9 +105,7 @@ nav a.active {
 }
 
 
-/* ============================================================
-   HOMEPAGE HERO HEADER
-   ============================================================ */
+/* ----------------- HEADER------------- */
 header {
     background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url(../images/bg.jpg);
     height: 100vh;
@@ -169,7 +161,7 @@ header {
 
 .head-btn:hover { background: orange; }
 
-/* Booking form */
+
 .head-form {
     flex: 0 0 360px;
     background: white;
@@ -257,9 +249,7 @@ header {
 .check-btn:hover { background: orange; }
 
 
-/* ============================================================
-   ROOMS PAGE — COMPACT HERO HEADER
-   ============================================================ */
+/* ----------------------- ROOMS PAGE-------------------- */
 header.rooms-header {
     background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url(../images/bg.jpg);
     height: 300px;
@@ -284,9 +274,7 @@ header.rooms-header {
 }
 
 
-/* ============================================================
-   FILTER BAR (rooms.html)
-   ============================================================ */
+/* ------------------FILTER BAR ----------------- */
 .filter-bar {
     background: #fff;
     border-bottom: 1px solid #eee;
@@ -505,9 +493,7 @@ header.rooms-header {
 .gallery-item:hover img { transform: scale(1.07); }
 
 
-/* ============================================================
-   TESTIMONIALS SECTION
-   ============================================================ */
+/* ------------------TESTIMONIALS SECTION -------------------------- */
 .testimonials {
     padding: 60px 0;
     background: white;
@@ -589,9 +575,7 @@ header.rooms-header {
 .dot.active { background: #c47f00; }
 
 
-/* ============================================================
-   CTA + VIDEO SECTION
-   ============================================================ */
+/* --------------------CTA + VIDEO SECTION------------------- */
 .cta-video {
     background: #f5f5f5;
     padding: 60px 0;
@@ -632,9 +616,7 @@ header.rooms-header {
 }
 
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* ---------------------FOOTER STYLING------------------- */
 .footer {
     background-color: #0d2b2b;
     color: #ccc;
