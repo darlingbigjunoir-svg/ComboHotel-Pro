@@ -31,15 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Close menu when clicking outside nav / toggle
-    document.addEventListener("click", (e) => {
-      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        navMenu.classList.remove("open");
-        const icon = menuToggle.querySelector("i");
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-      }
-    });
-  }
+   menuToggle.addEventListener("click", function (e) {
+  e.stopPropagation(); // prevent bubbling
+  navMenu.classList.toggle("open");
+});
+       
+   
 
 
   // ============================================================

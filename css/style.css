@@ -49,6 +49,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 21px 0;
+    position: relative;
 }
 
 .logo h2 {
@@ -80,6 +81,7 @@ nav a.active {
     color: gold;
     text-decoration: underline;
 }
+
 
 .btn {
     color: white;
@@ -787,7 +789,7 @@ header.rooms-header {
     .desktop-btn { display: none; }
 
     nav {
-        display: none !important;
+        display: none;
         width: 100%;
         background: rgba(0,0,0,0.92);
         position: absolute;
@@ -797,7 +799,7 @@ header.rooms-header {
         border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    nav.open { display: block !important; }
+    nav.open { display: block; }
 
     /* Mobile reservation button inside nav */
     nav.open::after {
