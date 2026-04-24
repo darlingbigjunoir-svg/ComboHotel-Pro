@@ -617,13 +617,14 @@ header.rooms-header {
 
 .contact-header {
     background: white;
+    height: auto;
 }
 
 /* MAIN GRID */
 .contact-content {
-    padding: 60px 0;
+    padding: 60px 0 80px;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: start;
 }
