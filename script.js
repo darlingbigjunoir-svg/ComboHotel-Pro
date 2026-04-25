@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ---------- HAMBURGER MENU ---------- */
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu    = document.getElementById('nav-menu');
 
