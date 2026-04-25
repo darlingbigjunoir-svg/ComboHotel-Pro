@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
@@ -57,13 +55,8 @@ img { display: block; max-width: 100%; }
   padding: 20px 0;
   position: relative;
 }
-.head-btn a{
-    
-    padding:12px 30px;
-    border:none;
-    border-radius:12px;
-    color:white;    
-}
+
+
 
 .logo h2 {
   font-family: 'Arvo', serif;
@@ -830,7 +823,7 @@ header.events-header {
   font-size: 13.5px;
   color: #555;
   line-height: 1.6;
-  display: block; /* override the flex rule from .card-body p */
+  display: block;
 }
 
 /* ============================================================
@@ -1023,9 +1016,9 @@ header.contact-header {
   top: 0;
   z-index: 100;
 }
-.contact-main{
-    background: #fff;
-    padding:55px 0 85px;
+.contact-main {
+  background: #fff;
+  padding: 55px 0 85px;
 }
 .contact-content {
   padding: 65px 0 85px;
@@ -1268,6 +1261,9 @@ header.contact-header {
   .menu-toggle { display: block; }
   .desktop-btn { display: none; }
 
+  /* ── FIX: hide the head-btn wrapper on mobile too ── */
+  .head-btn { display: none; }
+
   nav {
     display: none;
     width: 100%;
@@ -1322,12 +1318,27 @@ header.contact-header {
     background: rgba(255,255,255,0.05);
   }
 
-  /* Light header nav override for mobile */
+  /* ── FIX: ensure nav dropdown sits below the full navbar on light headers ── */
   header.booking-header nav,
   header.events-header nav,
   header.contact-header nav,
-  header.restaurant-header nav {
+  header.restaurant-header nav,
+  header.rooms-header nav {
     top: 68px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.94);
+    z-index: 999;
+  }
+
+  /* ── FIX: navbar must be position:relative so absolute nav drops below it ── */
+  header.booking-header .navbar,
+  header.events-header .navbar,
+  header.contact-header .navbar,
+  header.restaurant-header .navbar,
+  header.rooms-header .navbar {
+    position: relative;
   }
 
   /* Hero */
@@ -1342,8 +1353,8 @@ header.contact-header {
   .head-form { flex: none; width: 100%; }
 
   /* Rooms page header */
-  header.rooms-header { height: 220px; min-height: unset; }
-  .rooms-hero-content { height: calc(220px - 72px); }
+  header.rooms-header { height: auto; min-height: unset; }
+  .rooms-hero-content { height: 148px; }
   .rooms-hero-content h1 { font-size: 38px; }
 
   /* Restaurant hero */
@@ -1401,7 +1412,7 @@ header.contact-header {
   .head-details p { font-size: 14px; }
 
   /* Rooms page */
-  header.rooms-header { height: 180px; }
+  header.rooms-header { height: auto; }
   .rooms-hero-content h1 { font-size: 30px; }
   .rooms-title h2 { font-size: 22px; }
   .rooms-card { max-width: 100%; }
