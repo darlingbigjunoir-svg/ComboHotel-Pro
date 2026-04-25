@@ -715,7 +715,92 @@ header.rooms-header {
 .send-btn:hover {
     background: orange;
 }
+* ---------- EVENTS STYLING ---------- */
+.events-header {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    color: white;
+    padding-bottom: 60px;
+}
+ 
 
+.events-title {
+    text-align: center;
+    padding: 50px 0 40px;
+}
+ 
+.events-title h1 {
+    font-size: 52px;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5px;
+}
+ 
+
+.events-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+ 
+
+.events-card {
+    background: white;
+    border-radius: 14px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+}
+ 
+.events-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.25);
+}
+ 
+.events-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+ 
+
+.events-card .card-body {
+    padding: 22px 22px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+ 
+.events-card .card-body h3 {
+    font-size: 20px;
+    font-family: 'Arvo', serif;
+    color: #c47f00;
+    margin-bottom: 4px;
+}
+ 
+.events-card .card-body p {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.6;
+}
+ 
+.events-card .card-body p:first-of-type {
+    font-weight: 600;
+    color: #333;
+    font-size: 13px;
+}
 
 /* ----------------------- ROOMS STYLING-------------------- */
 header.rooms-header {
