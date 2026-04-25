@@ -28,3 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+document.querySelectorAll('#nav-menu a').forEach(link => {
+  link.addEventListener('click', function () {
+    document.querySelectorAll('#nav-menu a').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
