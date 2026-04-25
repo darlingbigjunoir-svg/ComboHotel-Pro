@@ -57,6 +57,13 @@ img { display: block; max-width: 100%; }
   padding: 20px 0;
   position: relative;
 }
+.head-btn a{
+    
+    padding:12px 30px;
+    border:none;
+    border-radius:12px;
+    color:white;    
+}
 
 .logo h2 {
   font-family: 'Arvo', serif;
@@ -592,7 +599,6 @@ header.rooms-header {
 header.restaurant-header {
   background: #fff;
   border-bottom: 1px solid #eee;
-  position: sticky;
   top: 0;
   z-index: 100;
   min-height: unset;
@@ -1017,7 +1023,10 @@ header.contact-header {
   top: 0;
   z-index: 100;
 }
-
+.contact-main{
+    background: #fff;
+    padding:55px 0 85px;
+}
 .contact-content {
   padding: 65px 0 85px;
   display: grid;
