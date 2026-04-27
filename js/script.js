@@ -28,9 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
 document.querySelectorAll('#nav-menu a').forEach(link => {
   link.addEventListener('click', function () {
     document.querySelectorAll('#nav-menu a').forEach(l => l.classList.remove('active'));
     this.classList.add('active');
   });
 });
+
+// Thumbnail click → update main image
+function changeMain(thumb) {
+  const mainImg = document.getElementById('mainRoomImg');
+  if (!mainImg) return;
+
+  mainImg.src = thumb.src;
+  mainImg.alt = thumb.alt;
+
+  // Highlight the active thumbnail
+  document.querySelectorAll('.room-thumbs img').forEach(img => {
+    img.style.borderColor = 'transparent';
+  });
+  thumb.style.borderColor = '#c47f00';
+}
