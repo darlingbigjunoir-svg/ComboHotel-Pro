@@ -36,7 +36,7 @@ document.querySelectorAll('#nav-menu a').forEach(link => {
   });
 });
 
-// Thumbnail click → update main image
+
 function changeMain(thumb) {
   const mainImg = document.getElementById('mainRoomImg');
   if (!mainImg) return;
@@ -44,7 +44,7 @@ function changeMain(thumb) {
   mainImg.src = thumb.src;
   mainImg.alt = thumb.alt;
 
-  // Highlight the active thumbnail
+  
   document.querySelectorAll('.room-thumbs img').forEach(img => {
     img.style.borderColor = 'transparent';
   });
